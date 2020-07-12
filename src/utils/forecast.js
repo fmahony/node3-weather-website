@@ -25,7 +25,10 @@ const forecast = (latitude, longitude, callback)=> {
             callback('Location not found.  Check spelling.', undefined)
         } else {
             callback(undefined, {
-                temp: response.body.current.temperature
+                status: response.body.current.weather_descriptions[0],
+                temp: response.body.current.temperature,
+                humidity: response.body.current.humidity,
+
             })
         }
     })

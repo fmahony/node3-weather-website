@@ -5,8 +5,11 @@ const fetchWeather = (location) => {fetch('/weather?address=' + location).then((
         if(data.error){
             messageOne.textContent = data.error
         } else {
+            temp= data.temp 
+            humidity = data.humidity
+            status = data.status
             messageOne.textContent = data.location
-            messageTwo.textContent = data.forecast
+            messageTwo.textContent = 'It is ' + status + ' with a temperature of ' + temp + 'F and a humidity of ' + humidity + ' %.'
         }
     })
 })}
