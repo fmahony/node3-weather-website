@@ -18,6 +18,7 @@ const geocode=require('./utils/geocode')
 const publicDirectory = path.join(__dirname,'../public')
 const viewsPath = path.join(__dirname, '../templates/views')
 const partialsPath = path.join(__dirname, '../templates/partials')
+const port = process.env.PORT || 3000
 
 //Setup static directory
 app.use(express.static(publicDirectory))
@@ -108,6 +109,6 @@ app.get('*', (req,res) => {
 })
 
 //----------Start Server
-app.listen(3000, () => {
-    console.log('Server started on port 3000!')
+app.listen(port, () => {
+    console.log('Server started on port' + port + '!')
 })
